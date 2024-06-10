@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Los Burgueses</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img src="./banner.jpg" alt="logotipo">
+        <h1>Los Burgueses</h1>
+        <p>(55) 9 9225-1393</p>
+    </header>
+    <main>
+        <section class="order-form">
+            <h2>Faça seu Pedido &#127828;</h2>
+            <form id="orderForm">
+                <label for="customerName">Seu nome:</label>
+                <input type="text" id="customerName" name="customerName" required>
+
+                <label for="burgerType">Nosso menu:</label>
+                <select id="burgerType" name="burgerType" onchange="calculateTotal()">
+                    <option value="SMASH DUPLO" data-price="22.99">SMASH DUPLO - R$22.99</option>
+                    <option value="SALADA" data-price="23.99">SALADA - R$23.99</option>
+                    <option value="BACON" data-price="26.99">BACON - R$26.99</option>
+                    <option value="ONION RINGS" data-price="26.99">ONION RINGS - R$26.99</option>
+    
+                    <option value="BATATA FRITA M" data-price="18.00">BATATA FRITA M - R$18.00</option>
+                    <option value="BATATA FRITA G" data-price="25.00">BATATA FRITA G - R$25.00</option>
+                    <option value="BATATA GOURMET" data-price="35.00">BATATA GOURMET - R$35.00</option>
+
+                </select>
+
+                <label for="quantity">Quantidade:</label>
+                <select id="quantity" name="quantity" onchange="calculateTotal()">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+
+                <p id="totalPrice">Total: R$15</p>
+
+                <h3>Pagamento via Pix</h3>
+                <p>Chave Pix (CPF): <span id="pixKey">04668918067</span> <button type="button" onclick="copyPixKey()">Copiar</button></p>
+                <p><strong>Importante:</strong> Após o pagamento, encaminhe o comprovante via WhatsApp! &#128522;</p>
+
+                <button type="button" onclick="getLocation()">Pedir via WhatsApp</button>
+            </form>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
